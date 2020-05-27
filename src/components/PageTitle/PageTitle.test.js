@@ -8,11 +8,11 @@ describe("<PageTitle />", function () {
      * Write a snapsho◘t test for PageTitle component
      * Don't forget to add snapshot file to the git
      */
-
     const labelText = "label text";
-    const { container, getByText } = render(<PageTitle label={labelText} />);
+    const {
+      container: { firstChild },
+    } = render(<PageTitle label={labelText} />);
 
-    expect(getByText(labelText)).toBeInTheDocument();
-    expect(container).toMatchSnapshot();
+    expect(firstChild).toMatchSnapshot();
   });
 });
